@@ -1,4 +1,10 @@
-#CurlHttp 
+#CurlHttp
+[![Total Downloads](https://img.shields.io/packagist/dt/phpcurl/curlhttp.svg)](https://packagist.org/packages/phpcurl/curlhttp)
+[![Latest Stable Version](https://img.shields.io/packagist/v/phpcurl/curlhttp.svg)](https://packagist.org/packages/phpcurl/curlhttp)
+[![Travis Build](https://travis-ci.org/phpcurl/curlhttp.svg?branch=master)](https://travis-ci.org/phpcurl/curlhttp)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/bec0987d-5d9e-4895-9a34-435d5191710c.svg)](https://insight.sensiolabs.com/projects/bec0987d-5d9e-4895-9a34-435d5191710c)
+
+
 The simplest cURL HTTP client for PHP
 
 ##Install

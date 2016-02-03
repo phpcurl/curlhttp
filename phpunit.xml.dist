@@ -12,7 +12,8 @@
     syntaxCheck="true">
     <testsuites>
         <testsuite name="Main">
-            <directory>./test</directory>
+            <directory>test</directory>
+            <exclude>test/HttpClientFunctionalTest.php</exclude>
         </testsuite>
     </testsuites>
     <filter>
