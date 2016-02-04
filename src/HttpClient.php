@@ -143,13 +143,6 @@ class HttpClient
         ));
 
         $response = $curl->exec($this->attempts, self::USE_EXCEPTIONS);
-
-        $info = $curl->getInfo();
-        $code = $info['http_code'];
-        $headerSize = $info['header_size'];
-        $headers = substr($response, 0, $headerSize);
-        $headersArray = preg_split("/\r\n/", $headers, -1, PREG_SPLIT_NO_EMPTY);
-        $body = substr($response, $headerSize);
-        return new HttpResponse($code, $headersArray, $body);
+        return new HttpResponse($response, $curl->getInfo());
     }
 }

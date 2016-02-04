@@ -9,7 +9,7 @@ class HttpResponse
     /**
      * @var int
      */
-    private $status;
+    private $code;
 
     /**
      * @var string
@@ -22,24 +22,31 @@ class HttpResponse
     private $headers;
 
     /**
-     * HttpResponse constructor.
-     * @param int $status
-     * @param array $headers
-     * @param string $body
+     * @var array
      */
-    public function __construct($status, array $headers, $body)
+    private $info;
+
+    /**
+     * HttpResponse constructor.
+     * @param string $response
+     * @param array $curlInfo
+     */
+    public function __construct($response, array $curlInfo)
     {
-        $this->status = $status;
-        $this->body = $body;
-        $this->headers = $headers;
+        $this->info = $curlInfo;
+        $this->code = $curlInfo['http_code'];
+        $headerSize = $curlInfo['header_size'];
+        $headers = substr($response, 0, $headerSize);
+        $this->headers = preg_split("/\r\n/", $headers, -1, PREG_SPLIT_NO_EMPTY);
+        $this->body = substr($response, $headerSize);
     }
 
     /**
      * @return int
      */
-    public function getStatus()
+    public function getCode()
     {
-        return $this->status;
+        return $this->code;
     }
 
     /**
@@ -56,5 +63,14 @@ class HttpResponse
     public function getHeaders()
     {
         return $this->headers;
+    }
+
+    /**
+     * Get curl_info array
+     * @return array
+     */
+    public function getInfo()
+    {
+        return $this->info;
     }
 }
