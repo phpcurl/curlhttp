@@ -12,22 +12,14 @@ Via [composer](https://getcomposer.org):
 `$ composer require "phpcurl/curlhttp"`
 
 ##Usage
-
-It is really that easy.
-
 ```php
 <?php
-require_once 'vendor/autoload.php';
 use PHPCurl\CurlHttp\HttpClient;
 
 $http = new HttpClient();
 
-$http->setOptions([
-    CURLOPT_FOLLOWLOCATION => false, // Any arbitrary curl options you want
-]);
-
 $response = $http->post('http://example.com/?a=b', 'my post data', ['User-Agent: My php crawler']);
-// Supported: get(), post(), head(), post(), put(), delete(), custom methods
+// Supported: get(), post(), head(), post(), put(), delete()
 
 $body = $response->getBody(); // Response body, string
 
