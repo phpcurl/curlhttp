@@ -1,4 +1,4 @@
-#CurlHttp
+# CurlHttp
 [![Total Downloads](https://img.shields.io/packagist/dt/phpcurl/curlhttp.svg)](https://packagist.org/packages/phpcurl/curlhttp)
 [![Latest Stable Version](https://img.shields.io/packagist/v/phpcurl/curlhttp.svg)](https://packagist.org/packages/phpcurl/curlhttp)
 [![Travis Build](https://travis-ci.org/phpcurl/curlhttp.svg?branch=master)](https://travis-ci.org/phpcurl/curlhttp)
@@ -7,11 +7,11 @@
 
 The simplest cURL HTTP client for PHP
 
-##Install
+## Install
 Via [composer](https://getcomposer.org):
 `$ composer require "phpcurl/curlhttp"`
 
-##Usage
+## Usage
 ```php
 <?php
 use PHPCurl\CurlHttp\HttpClient;
